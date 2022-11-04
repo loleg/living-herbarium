@@ -1,0 +1,331 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "occurence",
+      "path": "herbarium---occurrence-sample.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "gbifID",
+            "type": "integer",
+            "format": "default",
+            "description": "The reference to an entry in GBIF.org",
+            "title": "GBIF Identifier"
+          },
+          {
+            "name": "identifier",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "modified",
+            "type": "datetime",
+            "format": "default"
+          },
+          {
+            "name": "basisOfRecord",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "occurrenceID",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "catalogNumber",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "recordNumber",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "recordedBy",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "eventDate",
+            "type": "datetime",
+            "format": "default"
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "month",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "day",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "countryCode",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "stateProvince",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "county",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "locality",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "verbatimElevation",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "decimalLatitude",
+            "type": "number",
+            "format": "default",
+            "title": "Latitude"
+          },
+          {
+            "name": "decimalLongitude",
+            "type": "integer",
+            "format": "default",
+            "title": "Longitude"
+          },
+          {
+            "name": "footprintWKT",
+            "type": "string",
+            "format": "default",
+            "title": "Geographical shape",
+            "description": "Could be a point location or the boundary polygon"
+          },
+          {
+            "name": "footprintSRS",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "footprintSpatialFit",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "georeferencedBy",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "scientificName",
+            "type": "string",
+            "format": "default",
+            "title": "Scientific Name"
+          },
+          {
+            "name": "kingdom",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "phylum",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "class",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "order",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "family",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "genus",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "genericName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "infragenericEpithet",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "specificEpithet",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "infraspecificEpithet",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "cultivarEpithet",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "taxonRank",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "taxonomicStatus",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "publishingCountry",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "lastInterpreted",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "elevation",
+            "type": "integer",
+            "format": "default",
+            "title": "Height (m)"
+          },
+          {
+            "name": "mediaType",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "hasCoordinate",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "hasGeospatialIssues",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "taxonKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "acceptedTaxonKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "kingdomKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "phylumKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "classKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "orderKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "familyKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "genusKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "speciesKey",
+            "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "species",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "acceptedScientificName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "verbatimScientificName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "lastCrawled",
+            "type": "datetime",
+            "format": "default",
+            "description": "When the dataset was synchronized from the research dataset",
+            "title": "Last Crawled date"
+          },
+          {
+            "name": "repatriated",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "iucnRedListCategory",
+            "type": "string",
+            "format": "default"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "united-herbaria-sample",
+  "title": "United Herbaria sample dataset",
+  "description": "Data Package based on the GBIF export of the United Herbaria dataset",
+  "homepage": "https://hack.glam.opendata.ch/project/177",
+  "contributors": [
+    {
+      "title": "United Herbaria of the University and ETH Zurich",
+      "role": "author"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}

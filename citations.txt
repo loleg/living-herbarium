@@ -1,0 +1,2 @@
+When using this dataset please use the following citation and pay attention to the rights documented in rights.txt:
+Jutzi M, Vilpert M, Juillerat P, Eggenberg S (2022). Swiss National Databank of Vascular Plants. Version 1.11. Swiss National Biodiversity Data and Information Centres – infospecies.ch. Occurrence dataset https://doi.org/10.15468/7jffp3 accessed via GBIF.org on 2022-11-04.

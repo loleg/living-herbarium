@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 falcon = "*"
-pandas-datapackage-reader = "*"
 frictionless = {extras = ["pandas"], version = "*"}
 
 [dev-packages]

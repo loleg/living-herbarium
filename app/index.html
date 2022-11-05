@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+
+    <title>Living Herbarium</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="index.css" />
+
+</head>
+<body>
+
+    <header>
+        <a class="logo" href="#">
+            <div class="title">Living Herbarium</div>
+        </a>
+        <nav>
+            <a class="btn" href="#" id="geolocate" title="Center on my location">&#8858;</a>
+        </nav>
+    </header>
+
+    <div id="map" tabindex="0"></div>
+
+</body>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+<script src="https://unpkg.com/zepto@latest"></script>
+<script src="https://unpkg.com/moment@latest"></script>
+<script src="https://unpkg.com/mustache@latest"></script>
+
+<script id="template" type="x-tmpl-mustache">
+<b>{{ scientificName }}</b><br>
+{{ level2Name }}<br>
+<small>{{ datestamp }}</small>
+</script>
+<script>
+
+const POPUP = document.getElementById('template').innerHTML;
+
+const map = L.map('map').setView([46.3127, 8.8660], 9);
+
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+$.get('/occurrence-ticino', function(data) {
+
+  $.each(data, function(key, o) {
+
+    o['datestamp'] = moment(o['lastInterpreted'])
+      .format('MMMM Do YYYY, hh:mm');
+
+    const marker = L.marker(
+      [o['decimalLatitude'], o['decimalLongitude']],
+      {alt: o['scientificName']}).addTo(map)
+    	.bindPopup(
+        Mustache.render(POPUP, o)
+      );
+
+  });
+});
+
+
+
+// Set geolocation events
+map.on('locationfound', function(e) {
+    var radius = e.accuracy / 2;
+    L.marker(e.latlng).addTo(map);
+        //.bindPopup(radius + " m entfernt").openPopup();
+});
+map.on('locationerror', function(e) {
+    alert(e.message);
+});
+$('#geolocate').click(function() {
+    map.locate({setView: true, maxZoom: 16});
+});
+// Geolocation utility (on right-click)
+map.on('contextmenu', function(e) {
+    var coords = e.latlng.lat.toFixed(4)+'  '+e.latlng.lng.toFixed(4);
+    L.popup().setLatLng(e.latlng).setContent(coords).openOn(map);
+});
+
+</script>
+</html>

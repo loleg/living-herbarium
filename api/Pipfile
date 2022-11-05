@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+falcon = "*"
+pandas-datapackage-reader = "*"
+frictionless = {extras = ["pandas"], version = "*"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

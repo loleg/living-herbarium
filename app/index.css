@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* Dark mode */
+/* body {
+  filter: invert(100%); background: black none repeat scroll 0% 0%; height: 100%;
+} */
+
+
+#map {
+  height: 100%; width: 100vw;
+  position: absolute;
+  z-index: 1;
+}
+.hidden, hide {
+  display: none;
+}
+header, .popup {
+  font-family: helvetica,sans-serif;
+}
+header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+header .logo {
+  display: inline-block;
+  font-size: 0px;
+  height: 20px; width: auto;
+  right: 0px;
+  position: absolute;
+  text-align: right;
+  padding: 8px;
+  background: #fff no-repeat top left;
+  /* background-image: url(...your logo...); */
+  background-size: contain;
+  border: 10px solid white;
+  text-decoration: none;
+}
+header .title {
+  font-size: 17pt;
+  color: #999;
+  padding-top: 0px;
+}
+header nav {
+  padding: 10px;
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+header nav a {
+  margin: 5px;
+  font-size: 125%;
+}
+
+.item.w-full.hidden > a {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.item.w-full > a {
+  opacity: 1;
+}
+
+#filters.vertical .fields .fld {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin-right: 3%;
+}
+
+#filters.horizontal .fields .fld {
+  display: block;
+  margin-bottom: 7px;
+}
+
+#filters .fields .fld { opacity: 0.8; }
+#filters .fields .fld span {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.fields .fld span {
+  font-size: 110%;
+  padding: 0.3em 0.8em;
+  border-radius: 0.5em;
+  margin-right: 0.2em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+#filters .fields .fld:nth-child(1) span.active,
+.fields .fld:nth-child(1) span {
+  background-color: #D5F6E8;
+  color: #60C398;
+}
+#filters .fields .fld:nth-child(2) span.active,
+.fields .fld:nth-child(2) span {
+  background-color: #E8D3FF;
+  color: #956EC0;
+}
+#filters .fields .fld:nth-child(3) span.active,
+.fields .fld:nth-child(3) span {
+  background-color: #BCE0FB;
+  color: #4F7795;
+}
+#filters .fields .fld:nth-child(4) span.active,
+.fields .fld:nth-child(4) span {
+  background-color: #EEB4A7;
+}
+#filters .fields .fld:nth-child(5) span.active,
+.fields .fld:nth-child(5) span {
+  background-color: #BBA0CB;
+}
+#filters .fields .fld:nth-child(6) span.active,
+.fields .fld:nth-child(6) span {
+  background-color: #D2DAB1;
+}
+
+.fields.text-sm {
+  font-weight: 500;
+}
+
+.details .title.text-xl {
+  min-height: 3em;
+}
+.details .fields.text-sm {
+  min-height: 11em;
+}
+
+.minipic {
+  border-radius: 50%;    /* Make it a circle */
+  margin: 0 auto;        /* Center horizontally */
+  height: 50px; width: auto;
+  padding-right: 1em;
+}
+.map .btn {
+  background: #ff505a;
+  box-shadow: 3px 3px 3px lightgrey;
+  text-decoration: none;
+  color: #eee;
+  border-radius: 7px;
+  padding: 5px 7px 2px;
+}
+.map .btn:visited, .map .btn:active {
+  color: #eee;
+}
+.map .btn:hover {
+  color: #fff;
+}
+.popup .address,
+.popup .title {
+  font-size: 120%;
+  padding: 0.5em 0;
+  margin: 0px;
+}
+.popup .title {
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+}
+.popup img {
+  max-height: 100px;
+}
+.popup .fld i {
+  color: grey;
+  clear: both;
+  display: block;
+}
+.popup .fld span {
+  font-size: 125%;
+}
+.popup .fld {
+  margin-bottom: 0.5em;
+}
+.popup .buttons {
+  text-align: center;
+  margin-top: 1em;
+}
+.popup a {
+  cursor: pointer;
+}
+.popup .btn {
+  font-size: 150%;
+  color: white;
+  display: inline-block;
+}
+.legend {
+  text-align: left;
+  line-height: 18px;
+  color: #555;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.85;
+  text-align:center;
+}
+
+.info {
+  padding: 6px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  background: white;
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.info strong {
+  line-height: 35px;
+  color: #777;
+}
+.leaflet-control-layers{
+  background:#ec5d60 !important;
+  color:white !important;
+}
+.leaflet-control-layers-expanded {
+  opacity:0.85 !important;
+}
+.leaflet-control-layers-toggle {background-image: url(layers.png)
+}
+.leaflet-retina .leaflet-control-layers-toggle {
+background-image: url(layers-2x.png)
+}
+
+
+#pagination .disabled a {
+  color: lightgrey;
+  cursor: default;
+}
+
+#search .cancel-search {
+  position: relative;
+  float: right;
+  width: 2em;
+  height: 0px;
+  top: 0.5em;
+}

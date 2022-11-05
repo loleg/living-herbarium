@@ -1,0 +1,16 @@
+
+# Common ignores
+node_modules/
+package-lock.json
+yarn.lock
+*.py[cod]
+coverage.xml
+profile/*.prof
+*.lock
+.~lock*
+
+# Compressed assets
+*.gz
+
+# C extensions
+*.so

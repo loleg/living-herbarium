@@ -69,5 +69,5 @@ api.add_route("/sparql", SparqlResource())
 
 if __name__ == '__main__':
     with make_server('', SERVER_PORT, api) as httpd:
-        print('Serving on port 8000...')
+        print('Serving on port %d...' % SERVER_PORT)
         httpd.serve_forever()

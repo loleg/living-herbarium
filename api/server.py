@@ -14,7 +14,7 @@ api.add_static_route('/app', os.path.abspath('../app'))
 package = Package('../datapackage.json')
 
 config_resources = os.getenv('RESOURCES', None)
-
+SERVER_PORT = os.getenv('SERVER_PORT', 8000)
 
 def get_paginated_json(req, df):
     per_page = int(req.get_param('per_page', required=False, default=100))
@@ -67,6 +67,6 @@ class SparqlResource:
 api.add_route("/sparql", SparqlResource())
 
 if __name__ == '__main__':
-    with make_server('', 8000, api) as httpd:
+    with make_server('', SERVER_PORT, api) as httpd:
         print('Serving on port 8000...')
         httpd.serve_forever()

@@ -1,3 +1,5 @@
 
+Dataset: United Herbaria of the University and ETH Zurich
+Rights as supplied: http://creativecommons.org/licenses/by/4.0/legalcode
 Dataset: Swiss National Databank of Vascular Plants
 Rights as supplied: http://creativecommons.org/licenses/by/4.0/legalcode

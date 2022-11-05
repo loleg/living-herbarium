@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 falcon = "*"
 frictionless = {extras = ["pandas"], version = "*"}
+sparqlwrapper = "*"
 
 [dev-packages]
 

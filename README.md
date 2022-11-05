@@ -1,6 +1,6 @@
 # Living Herbarium
 
-A Data Package that is part of a [#GLAMhack 2022](https://glam.opendata.ch) project to explore an extract from the Swiss National Databank of Vascular Plants. This dataset was recommended and queries provided by Dr. Alessia Guggisberg at the Institute of Integrative Biology (IBZ), ETH Zurich.
+A Data Package that is part of a [#GLAMhack 2022](https://glam.opendata.ch) project to explore an extract from the Swiss National Databank of Vascular Plants and United Herbaria of the University and ETH Zurich. This dataset was recommended and queries provided by Dr. Alessia Guggisberg at the Institute of Integrative Biology (IBZ), ETH Zurich.
 
 For more details visit our [Project Page](https://hack.glam.opendata.ch/project/177)
 
@@ -21,6 +21,6 @@ Datasets:
 - United Herbaria of the University and ETH Zurich
 - Swiss National Databank of Vascular Plants
 
-Usage Rights: 
+Usage Rights:
 
 CC BY 4.0 http://creativecommons.org/licenses/by/4.0/legalcode

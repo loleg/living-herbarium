@@ -3,7 +3,7 @@
   "resources": [
     {
       "name": "occurence",
-      "path": "herbarium---occurrence-sample.csv",
+      "path": "data/occurrence-ticino.csv",
       "profile": "tabular-data-resource",
       "schema": {
         "fields": [
@@ -15,17 +15,57 @@
             "title": "GBIF Identifier"
           },
           {
+            "name": "bibliographicCitation",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "identifier",
             "type": "string",
             "format": "default"
           },
           {
             "name": "modified",
-            "type": "datetime",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "rightsHolder",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "datasetID",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "institutionCode",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "datasetName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "ownerInstitutionCode",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "basisOfRecord",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "informationWithheld",
             "type": "string",
             "format": "default"
           },
@@ -50,13 +90,33 @@
             "format": "default"
           },
           {
+            "name": "occurrenceStatus",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "associatedReferences",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "associatedSequences",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "fieldNumber",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "eventDate",
-            "type": "datetime",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "year",
-            "type": "integer",
+            "type": "year",
             "format": "default"
           },
           {
@@ -67,6 +127,11 @@
           {
             "name": "day",
             "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "verbatimEventDate",
+            "type": "string",
             "format": "default"
           },
           {
@@ -85,26 +150,69 @@
             "format": "default"
           },
           {
+            "name": "municipality",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "locality",
             "type": "string",
             "format": "default"
           },
           {
+            "name": "verbatimLocality",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "verbatimElevation",
-            "type": "any",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "verticalDatum",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "verbatimDepth",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "minimumDistanceAboveSurfaceInMeters",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "maximumDistanceAboveSurfaceInMeters",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "locationAccordingTo",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "locationRemarks",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "decimalLatitude",
             "type": "number",
-            "format": "default",
-            "title": "Latitude"
+            "format": "default"
           },
           {
             "name": "decimalLongitude",
+            "type": "number",
+            "format": "default"
+          },
+          {
+            "name": "coordinateUncertaintyInMeters",
             "type": "integer",
-            "format": "default",
-            "title": "Longitude"
+            "format": "default"
           },
           {
             "name": "footprintWKT",
@@ -114,25 +222,20 @@
             "description": "Could be a point location or the boundary polygon"
           },
           {
-            "name": "footprintSRS",
-            "type": "any",
+            "name": "identifiedBy",
+            "type": "string",
             "format": "default"
           },
           {
-            "name": "footprintSpatialFit",
-            "type": "any",
-            "format": "default"
-          },
-          {
-            "name": "georeferencedBy",
-            "type": "any",
+            "name": "taxonID",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "scientificName",
+            "title": "Scientific Name",
             "type": "string",
-            "format": "default",
-            "title": "Scientific Name"
+            "format": "default"
           },
           {
             "name": "kingdom",
@@ -160,6 +263,11 @@
             "format": "default"
           },
           {
+            "name": "subfamily",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "genus",
             "type": "string",
             "format": "default"
@@ -170,8 +278,13 @@
             "format": "default"
           },
           {
+            "name": "subgenus",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "infragenericEpithet",
-            "type": "any",
+            "type": "string",
             "format": "default"
           },
           {
@@ -181,16 +294,31 @@
           },
           {
             "name": "infraspecificEpithet",
-            "type": "any",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "cultivarEpithet",
-            "type": "any",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "taxonRank",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "verbatimTaxonRank",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "vernacularName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "nomenclaturalCode",
             "type": "string",
             "format": "default"
           },
@@ -200,20 +328,65 @@
             "format": "default"
           },
           {
+            "name": "nomenclaturalStatus",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "taxonRemarks",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "datasetKey",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
             "name": "publishingCountry",
             "type": "string",
             "format": "default"
           },
           {
             "name": "lastInterpreted",
-            "type": "integer",
+            "type": "string",
             "format": "default"
           },
           {
             "name": "elevation",
-            "type": "integer",
-            "format": "default",
-            "title": "Height (m)"
+            "type": "number",
+            "title": "Height (m)",
+            "format": "default"
+          },
+          {
+            "name": "elevationAccuracy",
+            "type": "any",
+            "format": "default"
+          },
+          {
+            "name": "depth",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "depthAccuracy",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "distanceAboveSurface",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "distanceAboveSurfaceAccuracy",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "issue",
+            "type": "string",
+            "format": "default"
           },
           {
             "name": "mediaType",
@@ -222,12 +395,12 @@
           },
           {
             "name": "hasCoordinate",
-            "type": "string",
+            "type": "boolean",
             "format": "default"
           },
           {
             "name": "hasGeospatialIssues",
-            "type": "string",
+            "type": "boolean",
             "format": "default"
           },
           {
@@ -262,12 +435,17 @@
           },
           {
             "name": "familyKey",
-            "type": "integer",
+            "type": "year",
             "format": "default"
           },
           {
             "name": "genusKey",
             "type": "integer",
+            "format": "default"
+          },
+          {
+            "name": "subgenusKey",
+            "type": "string",
             "format": "default"
           },
           {
@@ -291,14 +469,74 @@
             "format": "default"
           },
           {
+            "name": "typifiedName",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "protocol",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "lastParsed",
+            "type": "string",
+            "format": "default"
+          },
+          {
             "name": "lastCrawled",
-            "type": "datetime",
+            "type": "string",
             "format": "default",
             "description": "When the dataset was synchronized from the research dataset",
             "title": "Last Crawled date"
           },
           {
             "name": "repatriated",
+            "type": "boolean",
+            "format": "default"
+          },
+          {
+            "name": "relativeOrganismQuantity",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level0Gid",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level0Name",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level1Gid",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level1Name",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level2Gid",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level2Name",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level3Gid",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "level3Name",
             "type": "string",
             "format": "default"
           },
@@ -307,6 +545,9 @@
             "type": "string",
             "format": "default"
           }
+        ],
+        "missingValues": [
+          ""
         ]
       }
     }
@@ -314,7 +555,7 @@
   "name": "united-herbaria-sample",
   "title": "United Herbaria sample dataset",
   "description": "Data Package based on the GBIF export of the United Herbaria dataset",
-  "homepage": "https://hack.glam.opendata.ch/project/177",
+  "homepage": "https://github.com/we-art-o-nauts/living-herbarium",
   "contributors": [
     {
       "title": "United Herbaria of the University and ETH Zurich",

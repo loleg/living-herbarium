@@ -49,32 +49,34 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-$.get('/sparql?species=3001244', function(sparql) {
-
-  const image_url = sparql.results.bindings[0].pic.value;
-
-  $.get('/occurrence-ticino', function(data) {
-
-    $.each(data, function(key, o) {
-
-      o['datestamp'] = moment(o['lastInterpreted'])
-        .format('MMMM Do YYYY, hh:mm');
-
-      o['image_url'] = image_url;
-
-      const marker = L.marker(
-        [o['decimalLatitude'], o['decimalLongitude']],
-        {alt: o['scientificName']}).addTo(map)
-      	.bindPopup(
-          Mustache.render(POPUP, o)
-        );
-
+$.get('/occurrence-ticino?_unique=speciesKey', function(uniqueKeys) {
+  const speciesKeys = uniqueKeys.join(',');
+  $.get('/sparql?species=' + speciesKeys, function(sparql) {
+    let speciesData = {};
+    $.each(sparql.results.bindings, function() {
+      speciesData[parseInt(this.gbifid.value)] = this.pic.value;
     });
+    $.get('/occurrence-ticino', function(data) {
+      $.each(data, function(key, o) {
+
+        o['datestamp'] = moment(o['lastInterpreted'])
+          .format('MMMM Do YYYY, hh:mm');
+
+        o['image_url'] = speciesData[o.speciesKey];
+
+        const marker = L.marker(
+          [o['decimalLatitude'], o['decimalLongitude']],
+          {alt: o['scientificName']}).addTo(map)
+        	.bindPopup(
+            Mustache.render(POPUP, o)
+          );
+
+      });
+    });
+
   });
 
 });
-
-
 
 
 // Set geolocation events
